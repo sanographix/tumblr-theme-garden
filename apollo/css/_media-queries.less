@@ -1,0 +1,251 @@
+/*--------------------------------------------------------------
+
+      Media Queries - Retina Display
+
+--------------------------------------------------------------*/
+
+// Retina のデバイス全部に出す
+@media
+(-webkit-min-device-pixel-ratio: 2),
+(            min-resolution: 2dppx) {
+
+}
+
+// Retina かつ iPad 以上のときに出す
+@media
+(-webkit-min-device-pixel-ratio: 2) and (min-device-width: 768px),
+(            min-resolution: 2dppx) and (min-device-width: 768px) {
+
+}
+
+// Retina かつ PC のときだけに出す
+@media
+(-webkit-min-device-pixel-ratio: 2) and (min-device-width: 1025px),
+(            min-resolution: 2dppx) and (min-device-width: 1025px) {
+
+}
+
+
+/*--------------------------------------------------------------
+
+      Media Queries - Tablet
+
+--------------------------------------------------------------*/
+
+@media (min-width: 768px) and (max-width: 1040px) {
+
+#container {
+    width: 700px;
+}
+
+#main {
+    padding-left: 0;
+}
+
+.entry-meta-header {
+    position: static;
+    margin-bottom: 1em;
+    width: auto;
+
+    .meta-elements {
+        display: inline;
+        margin-right: 1em;
+    }
+
+}
+
+.post {
+    font-size: 100%;
+
+    .entry-title {
+      font-size: 180%;
+    }
+
+    .entry-content {
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            word-break: break-all;
+            overflow-x: hidden;
+        }
+    }
+}
+
+}
+
+
+/*--------------------------------------------------------------
+
+      Media Queries - Small Tablet & Smartphone
+
+--------------------------------------------------------------*/
+
+@media (max-width: 767px) {
+
+#container {
+    width: 93.75%;
+    word-wrap: break-word;
+    overflow: hidden;
+}
+
+.mobile-nav-panel {
+    display: block;
+}
+
+.nav {
+    height: 0;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+    position: absolute;
+    top: 45px;
+    left: 0;
+    background-color: @base;
+
+    &.active {
+        height: auto;
+        overflow: visible;
+        .transition;
+        z-index: 2;
+    }
+
+    ul {
+        display: block;
+
+        li {
+            display: block;
+            width: 100%;
+            margin: 0;
+
+            a {
+                display: block;
+                border: none;
+                padding: 1em .5em;
+                color: #fff;
+                border-bottom: 1px solid lighten(@base, 10%);
+                text-align: left;
+            }
+        }
+
+    }
+
+}
+
+.nav-search,
+.nav-rss {
+    display: none !important;
+}
+
+.search-form {
+    position: static;
+    a {
+        padding: 0 !important;
+        border: none !important;
+    }
+    .gsst_a {
+        padding-top: 3px !important;
+    }
+}
+
+.search-form > div{
+    margin: 15px 8px;
+}
+
+#header {
+    margin: 2em 0 4em 0;
+    text-align: center;
+}
+
+.blog-title {
+    float: none;
+}
+
+#main {
+    padding-left: 0;
+}
+
+.entry-meta-header {
+    position: static;
+    margin-bottom: 1em;
+    width: auto;
+
+    .meta-elements {
+        display: inline;
+        margin-right: 1em;
+    }
+
+}
+
+.post {
+    font-size: 90%;
+
+    .entry-title {
+      font-size: 180%;
+    }
+
+    .entry-content {
+        line-height: 1.8;
+
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            word-break: break-all;
+            overflow-x: hidden;
+        }
+
+        blockquote {
+            margin: 1em 0;
+        }
+
+        table {
+            th,
+            td {
+                word-break: break-all;
+            }
+        }
+
+        iframe {
+          width: 100% !important;
+        }
+
+    }
+}
+
+// ソーシャルボタン
+.social-buttons-line1,
+.social-buttons-line2 {
+    display: block;
+    text-align: center;
+}
+
+.social-buttons-line1 {
+  margin-bottom: .5em;
+}
+
+.pagenation {
+    span,
+    a {
+        padding: 5px;
+        margin: 0;
+    }
+}
+
+#footer {
+    .footer-blog-title {
+        float: none;
+        margin-bottom: 1em;
+    }
+}
+
+}
+
+
+/*--------------------------------------------------------------
+
+      Media Queries - Smartphone
+
+--------------------------------------------------------------*/
+
+@media (max-width: 480px) {
+
+}

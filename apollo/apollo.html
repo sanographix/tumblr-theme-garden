@@ -12,24 +12,13 @@
   <meta charset="UTF-8">
 
   <!-- Variables -->
-  <meta name="text:Google Author" content="" />
-  <meta name="text:Author" content="" />
-
   <meta name="if:Enable Like Button" content="1" />
   <meta name="if:Enable Tweet Button" content="1" />
   <meta name="if:Enable Plus1 Button" content="1" />
   <meta name="if:Enable Pocket Button" content="1" />
   <meta name="if:Enable Syntax Highlight" content="0" />
-  <meta name="if:Enable Recent Post Module" content="1" />
 
   <title>{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title}</title>
-
-  {block:TagPage}
-    <meta name="robots" content="noindex,follow"/>
-  {/block:TagPage}
-  {block:DayPage}
-    <meta name="robots" content="noindex,follow"/>
-  {/block:DayPage}
 
   <meta charset="UTF-8">
   {block:Description}
@@ -40,7 +29,7 @@
   <link rel="alternate" type="application/rss+xml" href="{RSS}">
   <link rel="apple-touch-icon" href="{PortraitURL-128}">
 
-  <link href="http://static.tumblr.com/xlsgtjb/Yqin5jedj/style.css" rel="stylesheet" type="text/css" media="screen" charset="utf-8"/>
+  <link href="http://static.tumblr.com/xlsgtjb/sson62w9q/style.css" rel="stylesheet" type="text/css" media="screen" charset="utf-8"/>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 
   <!-- OGP -->
@@ -64,9 +53,6 @@
   {block:Description}
     <meta property="og:description" content="{MetaDescription}">
   {/block:Description}
-  {block:IfGoogleAuthor}
-    <link rel="author" href="{text:Google Author}" />
-  {/block:IfGoogleAuthor}
   {block:IndexPage}
     <link rel="canonical" href="{BlogURL}"/>
     <meta property="og:url" content="{BlogURL}" />
@@ -90,7 +76,7 @@
       var js, fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) return;
       js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/ja_JP/all.js#xfbml=1";
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
     {/block:IfEnableLikeButton}
@@ -143,11 +129,9 @@
                 <a href="{Permalink}">{ShortMonth} {DayOfMonthWithZero}, {Year}</a>
               </span>
             {/block:Date}
-            {block:IfAuthor}
             <span class="meta-elements author">
-              by {text:Author}
+              by <a href="{PostAuthorURL}" target="_blank">{PostAuthorName}</a>
             </span>
-            {/block:IfAuthor}
           </footer>
 
           <!-- post: text -->
@@ -187,6 +171,20 @@
                 {/block:Caption}
               </div>
           {/block:Photoset}
+
+          <!-- post: panorama -->
+          {block:Panorama}
+            <div class="entry-content">
+              {LinkOpenTag}
+                <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
+              {LinkCloseTag}
+              {block:Caption}
+                <div class="caption">
+                  {Caption}
+                </div>
+              {/block:Caption}
+            </div>
+          {/block:Panorama}
 
           <!-- post: quote -->
           {block:Quote}
@@ -338,8 +336,6 @@
                   {block:IfEnableLikeButton}
                     <div class="fb-like" data-layout="box_count" data-action="like" data-show-faces="false" data-share="false"></div>
                   {/block:IfEnableLikeButton}
-                </span>
-                <span class="social-buttons-line2">
                   {block:IfEnablePlus1Button}
                     <div class="g-plusone" data-size="tall"></div>
                     <script type="text/javascript">
@@ -362,13 +358,6 @@
                   {/block:IfEnablePocketButton}
                 </span>
               </div>
-
-              {block:IfEnableRecentPostModule}
-                <div id="recent">
-                  <h3>Recent Posts</h3>
-                  <span class="loading">Loading...</span>
-                </div>
-              {/block:IfEnableRecentPostModule}
 
             {/block:PermalinkPage}
 
@@ -421,23 +410,18 @@
       </h1>
       <span class="copyright">
         Copyright(C) {CopyrightYears} {Title}<br/>
-        <!-- Please do not delete this link. -->
+        <!-- Please do not delete the following link. -->
         <a href="http://sanographix.github.io/tumblr/apollo/" target="_blank">Apollo</a> theme designed by <a href="http://www.sanographix.net/" target="_blank">SANOGRAPHIX.NET</a>
       </span>
     </footer>
 
   </div>
 
-  <script src="http://static.tumblr.com/xlsgtjb/O1En5jef0/apollo-js.min.js"></script>
+  <script src="http://static.tumblr.com/xlsgtjb/wKMn62xp9/apollo-js.min.js"></script>
   {block:IfEnableSyntaxHighlight}
     <script src="http://static.tumblr.com/xlsgtjb/mMCn5jefh/prettify.js"></script>
     <script>$(function(){prettyPrint()});</script>
   {/block:IfEnableSyntaxHighlight}
-
-  {block:IfEnableRecentPostModule}
-    <script src="{BlogURL}api/read/json?callback=tumblr&amp;num=8" type="text/javascript"></script>
-  {/block:IfEnableRecentPostModule}
-
 
 </body>
 </html>
