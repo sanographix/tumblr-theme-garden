@@ -1,0 +1,677 @@
+@charset "UTF-8";
+
+/*
+    Main CSS
+*/
+
+@import "_normalize.less";
+@import "_mixin.less";
+@import "_variable.less";
+@import "_button.less";
+@import "_tipsy.less";
+@import "_prettify.less";
+
+/* Primary Styles */
+
+// Common
+
+html,
+body {
+    font-family: 'Source Code Pro', 'Helvetica Neue', 'Helvetica', 'Arial', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+    background: @bg;
+    color: @base;
+}
+
+a {
+    color: @link;
+    text-decoration: none;
+    &:hover {
+        color: @hover;
+    }
+
+}
+
+::selection {
+    background: @selection;
+    color:#fff;
+}
+
+::-moz-selection {
+    background: @selection;
+    color:#fff;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    a,a:hover {
+        color: @base;
+        text-decoration: none;
+    }
+}
+
+.btn {
+    font-weight: normal;
+}
+
+hr {
+    width: 20%;
+    margin: 3em auto;
+    border: 0;
+    border-top: 3px solid #ddd;
+}
+
+//header
+
+#header {
+    margin: 20px 0 50px 0;
+    border-bottom: 1px solid @border;
+    padding-bottom: 30px;
+    .clearfix;
+
+    .blog-title {
+        font-size: 163%;
+        line-height: 1.5em;
+        margin: 0;
+        font-weight: normal;
+        padding: 0px 0 0 0;
+        letter-spacing: .2em;
+    }
+
+    .blog-description {
+        font-size: 69%;
+        margin: 10px 0 0 0;
+        font-weight: normal;
+        color: @light;
+        clear: both;
+        letter-spacing: .1em;
+    }
+
+    .profile-image {
+        width: 40px;
+        height: auto;
+        vertical-align: middle;
+        float: left;
+        margin-right: 10px;
+        .border-radius(3px);
+    }
+
+    .title-logo {
+        .logo-image {
+            max-width: 100%;
+        }
+    }
+
+}
+
+.mobile-nav-panel {
+    display: none;
+    padding: 15px 0;
+    border-bottom: 1px solid @border;
+    margin-bottom: 10px;
+
+    .icon-reorder {
+        cursor: pointer;
+        display: inline-block;
+        width: 18px;
+        height: 17px;
+        background: url('http://static.tumblr.com/xxf6ewk/XOcn70e9b/icon-reorder_2x.png') no-repeat 0 0;
+        background-size: 18px 17px;
+    }
+}
+
+.nav {
+    margin: 30px 0 10px;
+    font-size: 75%;
+
+    ul {
+        margin: 0;
+        padding: 0;
+        display: table;
+        width: 100%;
+        li {
+            display: table-cell;
+            width: 1%;
+        }
+    }
+    a {
+        display: block;
+        color: @base;
+        border-top: 1px solid @border;
+        margin-right: 30px;
+        padding: 10px 0;
+        &:hover {
+            border-top: 1px solid #999;
+        }
+    }
+
+    li:last-child a {
+        margin-right: 0px;
+    }
+}
+
+//container
+
+#container {
+    width: 900px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+// post
+
+.date {
+    font-size: 69%;
+    color: @light;
+    letter-spacing: .2em;
+    margin-bottom: 15px;
+    p {
+        margin: 0;
+    }
+    a {
+        color: @light;
+    }
+}
+
+.post {
+    padding-bottom: 40px;
+    margin-bottom: 50px;
+    border-bottom: 1px solid @border;
+
+    .entry-title {
+        font-size: 163%;
+        font-weight: normal;
+        margin: 0 0 .6em 0;
+    }
+
+    .caption {
+        margin-top: 20px;
+    }
+}
+
+.content_source {
+    font-size: 75%;
+    color: @light;
+    margin-bottom: 20px;
+}
+
+.entry-footer {
+    font-size: 75%;
+    color: @light;
+
+    .meta {
+        margin-bottom: 20px;
+
+        .timeago,
+        .notecount {
+            a {
+                color: @light;
+            }
+        }
+
+        .favicon {
+            .border-radius(3px);
+            vertical-align: text-bottom;
+        }
+    }
+
+    .meta-reblog {
+        margin-bottom: 10px;
+    }
+
+}
+
+// like, reblog button
+
+.like_and_reblog_buttons {
+    border: 1px solid @border;
+    border-radius: 3px;
+    list-style: none;
+    .inline-block;
+    margin: 0 0 15px 0;
+    padding: 0;
+}
+
+.like_and_reblog_buttons li {
+    float: left;
+    margin: 0;
+    padding: 9px 17px;
+    height: 16px;
+}
+
+.like_and_reblog_buttons li:first-child {
+    border-right: 1px solid @border;
+}
+
+#disqus_thread {
+    margin-top: 30px;
+}
+
+.notecontainer {
+    margin: 20px 0;
+
+    ol {
+        margin: 0;
+        padding: 0;
+
+        li {
+            list-style: none;
+            border-bottom: 1px dashed @border;
+            padding: 5px 0;
+
+            .avatar {
+                max-height: 16px;
+                width: auto;
+                vertical-align: middle;
+                margin-right: .5em;
+            }
+        }
+
+        .avatar {
+            .border-radius(3px);
+        }
+
+    }
+}
+
+// ソーシャルボタン
+.social-buttons {
+    .clearfix;
+    margin: 0;
+    padding: 0;
+
+    li {
+        float: left;
+        margin-right: 15px;
+        list-style: none;
+    }
+}
+
+// entry-content textstyle
+
+.entry-content {
+    font-size: 100%;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    font-family: 'Helvetica Neue','Arial','ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック','MS PGothic',sans-serif;
+    color: #555;
+
+    p {
+        margin: 0 0 1em 0;
+    }
+
+    img,
+    video {
+        max-width: 100%;
+    }
+
+    // Flickr で max-width 指定したときのアスペクト比をなおす
+     a[title*="Flickr"] img {
+        height: auto !important;
+     }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin: 1em 0 0.8em 0;
+        line-height: 1.5;
+        font-weight: normal;
+    }
+
+    h1 {
+        font-size: 170%;
+    }
+
+    h2 {
+        font-size: 160%;
+    }
+
+    h3 {
+        font-size: 140%;
+    }
+
+    h4 {
+        font-size: 130%;
+    }
+
+    h5 {
+        font-size: 110%;
+    }
+
+    h6 {
+        font-size: 100%;
+    }
+
+    ul,
+    ol,
+    dd {
+        margin: 0 0 1em 1.5em;
+        padding: 0;
+
+        li {
+            ul,ol {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        border-bottom: 1em;
+        margin-bottom: 1em;
+        width: 100%;
+        overflow: auto;
+        display: block;
+    }
+
+    table th,
+    table td {
+        border: 1px solid #ddd;
+        padding: 5px 10px;
+    }
+
+    table th {
+        background: #fafafa;
+    }
+
+
+    .hatena-asin-detail li {
+        line-height: 1.4;
+    }
+
+    blockquote {
+        margin: 1.5em 3em;
+        padding: 5px 20px;
+        border-left: 2px solid #aaa;
+        color: #777;
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+    }
+
+    pre,
+    code {
+        font-family: 'Source Code Pro', 'Monaco', 'Consolas', 'Courier New', Courier, monospace, sans-serif;
+    }
+
+    pre {
+        padding: 15px;
+        background: @bg-light;
+        border: none;
+        .border-radius(3px);
+        white-space: normal;
+        word-wrap: normal;
+        overflow-x: auto;
+        font-size: 105%;
+        line-height: 1.3;
+
+        &>code {
+            margin: 0;
+            padding: 0;
+            white-space: pre;
+            border: none;
+            background-color: transparent;
+            font-family: 'Source Code Pro', 'Monaco', 'Consolas', 'Courier New', Courier, monospace, sans-serif;
+        }
+    }
+
+    code {
+        font-size: 90%;
+        margin: 0 2px;
+        padding: 0px 5px;
+        border: 1px solid @border;
+        background-color: #f7f7f2;
+        border-radius: 3px;
+    }
+
+    .amazlet-box {
+        border: 1px solid @border;
+        padding: 15px;
+        margin-bottom: 1em !important;
+        .border-radius(4px);
+    }
+
+    .sticky-itslink,
+    .iTunesLinker-box {
+        border: 1px solid @border;
+        padding: 15px;
+        margin-bottom: 1em;
+        .border-radius(4px);
+    }
+
+    // twilog
+
+    .tl-tweet {
+        margin-bottom: 10px;
+        border-bottom: 1px dashed @border;
+        padding-bottom: 10px;
+
+        .tl-text {
+            margin-bottom: 5px;
+        }
+
+        .tl-posted {
+            font-size: 85%;
+            color: @light;
+            margin: 0;
+        }
+    }
+
+    ul.tl-tweets {
+        margin: 0 0 10px 0;
+        padding: 0;
+
+        li {
+            list-style: none;
+            margin-bottom: 10px;
+            border-bottom: 1px dashed @border;
+            padding-bottom: 10px;
+        }
+    }
+
+    // gistでtableおかしいのを打ち消す
+    .gist {
+        table {
+            margin: 0;
+            border: 0;
+            td {
+                border: 0;
+            }
+        }
+    }
+
+}
+
+
+// もっと読む
+
+.read_more {
+    padding: 5px 0;
+    display: block;
+    text-align: center;
+    border-top: 1px dashed #ccc;
+    border-bottom: 1px dashed #ccc;
+    font-family: 'Source Code Pro', 'Helvetica Neue', 'Helvetica', 'Arial', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+    &:hover {
+        background: #f8f8f8;
+    }
+}
+
+// link
+
+.link {
+    .entry-title {
+        background: @bg-light;
+        border: 1px solid @border;
+        padding: 8px;
+        .border-radius(5px);
+        a {
+            color: @link;
+        }
+    }
+}
+
+// chat
+
+.quote {
+
+    .entry-content.short {
+        font-size: 140%;
+    }
+
+    .entry-content.medium {
+        font-size: 120%;
+    }
+
+    .entry-content.long {
+        font-size: 100%;
+    }
+
+}
+
+// chat
+
+.ul-chat {
+    list-style: none;
+    margin: 0 !important;
+
+    li {
+        padding: 8px 15px;
+    }
+
+    .odd {
+        background: @bg-light;
+    }
+
+    .label {
+        font-weight: bold;
+    }
+}
+
+// 旧ページャ
+
+#pager {
+    padding-bottom: 50px;
+    text-align: center;
+    border-bottom: 1px solid @border;
+
+    a {
+        color: @light;
+        text-decoration: none;
+        font-size: 80%;
+        letter-spacing: .2em;
+        margin: 0 20px;
+
+        &:hover {
+            color: @base;
+        }
+    }
+}
+
+// 新ページャ
+
+.pagenation {
+    padding-bottom: 50px;
+    text-align: center;
+    border-bottom: 1px solid @border;
+    font-size: 80%;
+    text-transform: uppercase;
+
+    span,
+    a {
+        display: inline-block;
+        min-width: 1.2em;
+        padding: 6px 8px;
+        margin: 1px;
+        .border-radius(3px);
+    }
+
+    a {
+        color: @light;
+        &:hover {
+            background-color: @bg-light;
+        }
+    }
+
+    .current-page {
+        background: #ccc;
+        color: #fff;
+    }
+
+    &.pagenation-permalink {
+        a {
+            padding: 8px 15px;
+        }
+    }
+}
+
+// Answer
+
+.answer {
+    .question {
+        .border-radius(5px);
+        padding: 15px;
+        font-size: 110%;
+        background: @bg-light;
+        margin-bottom: 1em;
+        position: relative;
+
+        &:after {
+            top: 100%;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+        }
+
+        &:after {
+            border-color: rgba(245, 245, 245, 0);
+            border-top-color: @bg-light;
+            border-width: 10px;
+            left: 6.5%;
+            margin-left: -10px;
+        }
+
+    }
+
+    .asker-group {
+        margin-left: 5%;
+    }
+
+    .user-icon {
+        .border-radius(2px);
+    }
+}
+
+// Footer
+
+#footer {
+    padding: 30px 0;
+    text-align: right;
+    font-size: 75%;
+    color: @light;
+
+    .copyright {
+        margin-right: 1em;
+    }
+}
+
+// タグページ
+
+.tagged {
+    font-weight: normal;
+    margin-top: 0;
+    font-size: 88%;
+    padding-bottom: 20px;
+    border-bottom: 1px solid @border;
+}
+
+/* End Primary Styles */
+
+@import "_media-queries.less";

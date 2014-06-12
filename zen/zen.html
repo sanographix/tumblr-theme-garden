@@ -12,24 +12,19 @@
   <meta charset="UTF-8">
 
   <!-- Variables -->
-  <meta name="text:OGP Facebook Admin Number" content="" />
-  <meta name="text:OGP Facebook Page URL" content="" />
-  <meta name="text:OGP Facebook URL" content="" />
-  <meta name="text:Hatena Star Token" content="" />
   <meta name="text:Google Author" content="" />
   <meta name="text:Disqus Shortname" content="" />
 
-  <meta name="image:Title Logo" content="" />
+  <meta name="image:Add Title Logo" content="" />
 
   <meta name="if:Show Description" content="1" />
   <meta name="if:Show Profile Image" content="0" />
   <meta name="if:Show Header RSS Link" content="1" />
-  <meta name="if:Enable Hatena Star" content="1" />
-  <meta name="if:Enable Facebook Button" content="1" />
+  <meta name="if:Enable Like Button" content="1" />
   <meta name="if:Enable Tweet Button" content="1" />
   <meta name="if:Enable Plus1 Button" content="1" />
-  <meta name="if:Enable Pocket Button" content="0" />
-  <meta name="if:Enable Syntax Highlight" content="1" />
+  <meta name="if:Enable Pocket Button" content="1" />
+  <meta name="if:Enable Syntax Highlight" content="0" />
 
   <title>{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title}</title>
 
@@ -41,7 +36,7 @@
   <link rel="alternate" type="application/rss+xml" href="{RSS}">
   <link rel="apple-touch-icon" href="{PortraitURL-128}">
 
-  <link  href="//sanographix.github.io/public/tumblr/zen/2.x/css/style.css" rel="stylesheet" type="text/css" media="screen" charset="utf-8"/>
+  <link  href="//static.tumblr.com/xxf6ewk/5wEn71z2x/style.css" rel="stylesheet" type="text/css" media="screen" charset="utf-8"/>
   <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
 
   <!-- OGP -->
@@ -49,7 +44,6 @@
   <meta property="og:type" content="article" />
   <!-- Twitter tags -->
   <meta name="twitter:image" content="{PortraitURL-128}" />
-  <!-- photo だったら og-image は photoURL にする -->
   {block:PermalinkPage}
     {block:Posts}
       {block:Photo}
@@ -66,16 +60,6 @@
   {block:Description}
     <meta property="og:description" content="{MetaDescription}">
   {/block:Description}
-  <meta property="fb:admins" content="{text:OGP Facebook Admin Number}" />
-  {block:IfOGPFacebookPageURL}
-    <meta property="article:publisher" content="{text:OGP Facebook Page URL}" />
-  {/block:IfOGPFacebookPageURL}
-  {block:IfOGPFacebookURL}
-    <meta property="article:author" content="{text:OGP Facebook URL}" />
-  {/block:IfOGPFacebookURL}
-  {block:IfGoogleAuthor}
-  <link rel="author" href="{text:Google Author}" />
-  {/block:IfGoogleAuthor}
   {block:IndexPage}
     <link rel="canonical" href="{BlogURL}"/>
     <meta property="og:url" content="{BlogURL}" />
@@ -86,14 +70,14 @@
   {/block:PermalinkPage}
 
   <!--[if lt IE 9]>
-    <script src="//sanographix.github.io/public/tumblr/zen/2.x/js/html5shiv.js"></script>
+    <script src="http://static.tumblr.com/xlsgtjb/hkKn5jee9/html5shiv.js"></script>
   <![endif]-->
 
 </head>
 <body class="{block:IndexPage}page-index{/block:IndexPage}{block:PermalinkPage}page-permalink page-{PostID}{/block:PermalinkPage}">
 
   {block:PermalinkPage}
-    {block:IfEnableFacebookButton}
+    {block:IfEnableLikeButton}
     <div id="fb-root"></div>
     <script>(function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
@@ -102,7 +86,7 @@
       js.src = "//connect.facebook.net/ja_JP/all.js#xfbml=1";
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
-    {/block:IfEnableFacebookButton}
+    {/block:IfEnableLikeButton}
   {/block:PermalinkPage}
 
   <style>
@@ -142,14 +126,14 @@
         <img src="{PortraitURL-128}" class="profile-image" />
       {/block:IfShowProfileImage}
       <h1 class="blog-title">
-        {block:IfTitleLogoImage}
+        {block:IfAddTitleLogoImage}
           <div class="title-logo">
-            <a href="/"><img src="{image:Title Logo}" alt="{Title}" class="logo-image"></a>
+            <a href="/"><img src="{image:Add Title Logo}" alt="{Title}" class="logo-image"></a>
           </div>
-        {/block:IfTitleLogoImage}
-        {block:IfNotTitleLogoImage}
+        {/block:IfAddTitleLogoImage}
+        {block:IfNotAddTitleLogoImage}
           <a href="/">{Title}</a>
-        {/block:IfNotTitleLogoImage}
+        {/block:IfNotAddTitleLogoImage}
       </h1>
       {block:IfShowDescription}
         <h2 class="blog-description">{Description}</h2>
@@ -162,27 +146,17 @@
           <h2 class="tagged">Posts tagged "{Tag}"</h2>
       {/block:TagPage}
 
-      <!-- 投稿 -->
+      <!-- Post -->
       {block:Posts}
-        <article class="post {TagsAsClasses}
-        {block:Text}text{/block:Text}
-        {block:Photo}photo{/block:Photo}
-        {block:Photoset}photoset{/block:Photoset}
-        {block:Quote}quote{/block:Quote}
-        {block:Link}link{/block:Link}
-        {block:Chat}chat{/block:Chat}
-        {block:Video}video{/block:Video}
-        {block:Audio}audio{/block:Audio}
-        {block:Answer}answer{/block:Answer}
-        ">
+        <article class="post {TagsAsClasses} {PostType}">
+
           {block:Date}
           <div class="date">
-            {block:NewDayDate}<p><a href="{Permalink}">{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}</a></p>{/block:NewDayDate}
-            {block:SameDayDate}<p><a href="{Permalink}">{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}</a></p>{/block:SameDayDate}
+            <p><a href="{Permalink}">{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}</a></p>
           </div>
           {/block:Date}
 
-          <!-- post: テキスト -->
+          <!-- post: text -->
           {block:Text}
             <header class="entry-header">
               {block:Title}
@@ -194,7 +168,7 @@
             </div>
           {/block:Text}
 
-          <!-- post: 画像 -->
+          <!-- post: photo -->
           {block:Photo}
             <div class="entry-content">
               {LinkOpenTag}
@@ -208,7 +182,7 @@
             </div>
           {/block:Photo}
 
-          <!-- post: フォトセット -->
+          <!-- post: photoset -->
           {block:Photoset}
               <div class="entry-content">
                 {Photoset-700}
@@ -220,7 +194,21 @@
               </div>
           {/block:Photoset}
 
-          <!-- post: 引用 -->
+          <!-- post: panorama -->
+          {block:Panorama}
+            <div class="entry-content">
+              {LinkOpenTag}
+                <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
+              {LinkCloseTag}
+              {block:Caption}
+                <div class="caption">
+                  {Caption}
+                </div>
+              {/block:Caption}
+            </div>
+          {/block:Panorama}
+
+          <!-- post: quote -->
           {block:Quote}
             <div class="entry-content {Length}">
               <blockquote>“{Quote}”</blockquote>
@@ -232,7 +220,7 @@
             </div>
           {/block:Quote}
 
-          <!-- post: リンク -->
+          <!-- post: Link -->
           {block:Link}
             <header class="entry-header">
               <h1 class="entry-title">
@@ -246,7 +234,7 @@
             </div>
           {/block:Link}
 
-          <!-- post: チャット -->
+          <!-- post: Chat -->
           {block:Chat}
             <div class="entry-content">
               {block:Title}
@@ -265,7 +253,7 @@
             </div>
           {/block:Chat}
 
-          <!-- post: ビデオ -->
+          <!-- post: Video -->
           {block:Video}
             <div class="entry-content video-iframe">
               {Video-700}
@@ -277,7 +265,7 @@
             </div>
           {/block:Video}
 
-          <!-- post: オーディオ -->
+          <!-- post: Audio -->
           {block:Audio}
             <div class="entry-content">
               {AudioPlayerBlack}
@@ -298,7 +286,6 @@
               <div class="asker-group">
                 <img src="{AskerPortraitURL-24}" width="24" height="24" class="user-icon" /> {Asker}
               </div>
-              <hr/>
               <div class="answer cont">{Answer}</div>
             </div>
           {/block:Answer}
@@ -318,7 +305,7 @@
             </div>
           {/block:ContentSource}
 
-          <!-- 記事フッタ -->
+          <!-- Entry fotter -->
           <footer class="entry-footer" role="contentinfo">
             {block:RebloggedFrom}
               <div class="meta meta-reblog">
@@ -352,7 +339,6 @@ src="{ReblogRootPortraitURL-16}" class="favicon"/> {ReblogRootName}</a>
 
             </div>
 
-            <!-- パーマリンクだけソーシャルボタン出す -->
             {block:PermalinkPage}
 
               {block:Date}
@@ -364,40 +350,39 @@ src="{ReblogRootPortraitURL-16}" class="favicon"/> {ReblogRootName}</a>
 
               <ul class="social-buttons">
                 {block:IfEnableTweetButton}
-                <li class="social-button">
-                  <a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja">ツイート</a>
-                  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-                </li>
+                  <li class="social-button">
+                    <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en">Tweet</a>
+                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                  </li>
                 {/block:IfEnableTweetButton}
-                {block:IfEnableFacebookButton}
-                <li class="social-button">
-                  <div class="fb-like" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
-                </li>
-                {/block:IfEnableFacebookButton}
+                {block:IfEnableLikeButton}
+                  <li class="social-button">
+                    <div class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+                  </li>
+                {/block:IfEnableLikeButton}
                 {block:IfEnablePlus1Button}
-                <li class="social-button">
-                  <div class="g-plusone" data-size="medium"></div>
-                  <script type="text/javascript">
-                    window.___gcfg = {lang: 'ja'};
-
-                    (function() {
-                      var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-                      po.src = 'https://apis.google.com/js/plusone.js';
-                      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-                    })();
-                  </script>
-                </li>
+                  <li class="social-button">
+                    <div class="g-plusone" data-size="medium"></div>
+                    <script type="text/javascript">
+                      window.___gcfg = {lang: 'en'};
+                      (function() {
+                        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                        po.src = 'https://apis.google.com/js/plusone.js';
+                        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+                      })();
+                    </script>
+                  </li>
                 {/block:IfEnablePlus1Button}
                 {block:IfEnablePocketButton}
-                <li class="social-button">
-                  <a data-pocket-label="pocket" data-pocket-count="horizontal" class="pocket-btn" data-lang="en"></a>
-                  <script type="text/javascript">!function(d,i){
-                      if(!d.getElementById(i)){
-                      var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);
-                      }
-                    }(document,"pocket-btn-js");
-                  </script>
-                </li>
+                  <li class="social-button">
+                    <a data-pocket-label="pocket" data-pocket-count="horizontal" class="pocket-btn" data-lang="en"></a>
+                    <script type="text/javascript">!function(d,i){
+                        if(!d.getElementById(i)){
+                        var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);
+                        }
+                      }(document,"pocket-btn-js");
+                    </script>
+                  </li>
                 {/block:IfEnablePocketButton}
               </ul>
 
@@ -427,7 +412,7 @@ src="{ReblogRootPortraitURL-16}" class="favicon"/> {ReblogRootName}</a>
       {/block:Posts}
     </div>
 
-    <!-- パーマリンクのページャ -->
+    <!-- pager -->
     {block:PermalinkPagination}
       <div class="pagenation pagenation-permalink">
         {block:PreviousPost}
@@ -439,7 +424,6 @@ src="{ReblogRootPortraitURL-16}" class="favicon"/> {ReblogRootName}</a>
       </div>
     {/block:PermalinkPagination}
 
-    <!-- ページごとのページャ -->
     {block:Pagination}
       <div class="pagenation pagenation-index">
         {block:PreviousPage}
@@ -455,43 +439,21 @@ src="{ReblogRootPortraitURL-16}" class="favicon"/> {ReblogRootName}</a>
       </div>
     {/block:Pagination}
 
-
     <footer id="footer">
       <span class="copyright">
         ©{CopyrightYears} {Title}
       </span>
-      <!-- ↓ Please do not delete this anchor. -->
-      <a href="http://sanographix.github.io/tumblr/zen/" target="_blank">ZEN 2</a> theme designed by <a href="http://www.sanographix.net/" target="_blank">SANOGRAPHIX.NET</a>
+      <!-- Please do not delete the following link. -->
+      <a href="https://www.tumblr.com/theme/38889" target="_blank">ZEN theme</a> designed by <a href="http://www.sanographix.net/" target="_blank">SANOGRAPHIX.NET</a>
     </footer>
 
   </div>
 
-  <script src="//sanographix.github.io/public/tumblr/zen/2.x/js/zen-js.min.js"></script>
+  <script src="//static.tumblr.com/xxf6ewk/4Trn71z44/zen-js.min.js"></script>
   {block:IfEnableSyntaxHighlight}
-    <script src="//sanographix.github.io/public/tumblr/zen/2.x/js/prettify.js"></script>
+    <script src="//static.tumblr.com/xlsgtjb/mMCn5jefh/prettify.js"></script>
     <script>$(function(){prettyPrint()});</script>
   {/block:IfEnableSyntaxHighlight}
-
-  {block:IfEnableHatenaStar}
-    <script type="text/javascript" src="http://s.hatena.ne.jp/js/HatenaStar.js"></script>
-    <script type="text/javascript">
-      Hatena.Star.Token = '{text:Hatena Star Token}';
-    </script>
-    <script type="text/javascript">
-      Hatena.Star.SiteConfig = {
-        entryNodes: {
-          'article.post': {
-            uri: '.entry-title a',
-            title: 'document.title',
-            container: 'div.meta-footer'
-          }
-        }
-      };
-    </script>
-    <script type="text/javascript">
-      Hatena.Star.EntryLoader.headerTagAndClassName = ['div','meta-footer'];
-    </script>
-  {/block:IfEnableHatenaStar}
 
 </body>
 </html>
