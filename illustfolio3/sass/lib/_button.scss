@@ -1,0 +1,45 @@
+// buttons
+
+.btn {
+    display: inline-block;
+    text-align: center;
+    padding: .6em 1.2em;
+    cursor: pointer;
+    line-height: 1.5;
+    font-size: 90%;
+    border-radius: .3em;
+    overflow: hidden;
+    color: $base;
+    background-color: $btn;
+    text-decoration: none;
+    border: 1px solid $border;
+    &:hover {
+        background-color: $btn-hover;
+        color: $base;
+        text-decoration: none;
+        border-color: rgba(0,0,0,.2);
+    }
+}
+
+.btn-primary {
+    background-color: $btn-primary;
+    color: #fff;
+    border: 1px solid $btn-primary;
+    &:hover {
+        background-color: $btn-primary-hover;
+        color: #fff;
+        border: 1px solid $btn-primary-hover;
+    }
+}
+
+.btn-large {
+    padding: .8em 2em;
+    font-size: 150%;
+    @include box-sizing(border-box);
+    @include border-radius(.5em);
+}
+
+.btn-full {
+    @include box-sizing(border-box);
+    width: 100%;
+}

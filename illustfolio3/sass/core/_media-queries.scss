@@ -1,0 +1,229 @@
+// Media Queries - Retina Display
+
+// Retina のデバイス全部に出す
+
+@media
+(-webkit-min-device-pixel-ratio: 2),
+(            min-resolution: 2dppx) {
+
+}
+
+// Retina かつ iPad 以上のときに出す
+
+@media
+(-webkit-min-device-pixel-ratio: 2) and (min-device-width: 768px),
+(            min-resolution: 2dppx) and (min-device-width: 768px) {
+
+}
+
+// Retina かつ PC のときだけに出す
+
+@media
+(-webkit-min-device-pixel-ratio: 2) and (min-device-width: 1025px),
+(            min-resolution: 2dppx) and (min-device-width: 1025px) {
+
+}
+
+// Media Queries - Large Display
+
+@media (max-width: 1320px) {
+.outer {
+    width: auto;
+}
+}
+
+@media (min-width: 1240px) {
+
+.index-post-wrapper {
+}
+
+
+}
+
+// Media Queries - Tablet
+
+@media (min-width: 768px) and (max-width: 1040px) {
+
+}
+
+
+// Media Queries - Small Tablet & Smartphone
+
+@media (max-width: 767px) {
+
+// common
+
+body {
+    font-size: 95%;
+}
+
+.section {
+    margin-bottom: 2em;
+}
+
+// header
+
+.cover-image {
+    height: 568px; // js読み込むまでアテで入れてる
+}
+
+.header-container .container {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.header-wrapper,
+.header-box-title {
+    display: block;
+}
+
+.header-box-title {
+    text-align: center;
+}
+
+.blog-title {
+    margin: 0 0 0 0;
+    font-size: 140%;
+    a {
+        padding: 1.2em 0em;
+    }
+}
+
+.header-box-nav {
+    display: none;
+}
+
+.mobile-nav-panel {
+    display: block;
+}
+
+.nav {
+    li {
+        display: block;
+
+        a {
+            display: block;
+            padding: .8em .5em;
+            font-size: 130%;
+        }
+
+    }
+}
+
+.tag-list {
+    padding: 1.5em 0;
+
+    ul li {
+      font-size: 80%;
+    }
+}
+
+.section-header {
+    font-size: 200%;
+}
+
+// profile
+
+.section-profile {
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+.profile-wrapper {
+    display: block;
+    text-align: center;
+
+    .profile-image {
+        display: block;
+        padding: 0 0 1em 0;
+    }
+
+    .profile-content {
+        display: block;
+    }
+
+}
+
+.social-accounts {
+    li {
+        margin: 0 .25em .5em;
+
+        a {
+            width: 35px;
+            height: 35px;
+            line-height: 35px;
+        }
+
+    }
+}
+
+// permalink
+
+.permalink-post {
+    margin-top: 1.5em;
+}
+
+}
+
+
+// Media Queries - Smartphone
+
+@media (max-width: 480px) {
+
+.index-post-wrapper {
+    margin-left: -5px;
+    margin-right: -5px;
+
+    .post {
+        width: 50%;
+    }
+
+    .post-inner {
+        padding: 5px;
+    }
+
+}
+
+.post {
+
+    .entry-title {
+      font-size: 150%;
+    }
+
+    .entry-content {
+
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            word-break: break-all;
+            overflow-x: hidden;
+        }
+
+        blockquote {
+            margin: 1em 0;
+        }
+
+        table {
+            th,
+            td {
+                word-break: break-all;
+            }
+        }
+
+        iframe {
+          width: 100% !important;
+        }
+
+    }
+}
+
+#footer {
+    .span4 {
+        margin-bottom: 3em;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+}
