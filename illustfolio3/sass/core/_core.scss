@@ -77,6 +77,10 @@
             color: #fff;
         }
 
+        .icon-reorder {
+            background-image: url('http://static.tumblr.com/xlsgtjb/rKynedane/icon-reorder-wh.png');
+        }
+
     }
 }
 
@@ -209,15 +213,16 @@
 
     .icon-reorder {
         cursor: pointer;
+        background: url('http://static.tumblr.com/xlsgtjb/J8Lnedakk/icon-reorder.png') no-repeat center center;
+        background-size: 22px 18px;
         font-size: 21px;
-        width: 75px;
+        width: 62px;
         height: 75px;
         line-height: 75px;
         text-align: center;
         display: inline-block;
     }
 }
-
 
 // index
 
@@ -289,9 +294,9 @@
             }
         }
 
-        i {
+        img {
             vertical-align: middle;
-            font-size: 110%;
+            height: auto;
         }
     }
 
@@ -352,6 +357,12 @@
         a {
             color: $light;
         }
+    }
+
+    .icon-link {
+        width: 12px;
+        vertical-align: middle;
+        margin-right: .2em;
     }
 
 }
@@ -753,9 +764,9 @@
         padding-right: 1.5em;
         vertical-align: middle;
 
-        i {
-            font-size: 23px;
-            color: #ccc;
+        .social-icon {
+            width: 20px;
+            height: auto;
             vertical-align: middle;
         }
 
