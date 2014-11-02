@@ -767,34 +767,11 @@
         .social-icon {
             width: 20px;
             height: auto;
-            vertical-align: middle;
+            vertical-align: top;
         }
 
     }
 
-}
-
-.share-button {
-    position: relative;
-}
-
-// プルダウン
-.share-pulldown {
-    display: none;
-    position: absolute;
-    left: 0;
-    top: 30px;
-    background-color: #fff;
-    border: 1px solid $border;
-    width: 150px;
-    text-align: left;
-    li {
-        padding: 0;
-        a {
-            display: block;
-            padding: .4em;
-        }
-    }
 }
 
 .rebloggedfrom {
@@ -813,6 +790,16 @@
         vertical-align: middle;
     }
 
+}
+
+// tags
+
+.hastags {
+    .meta-elements {
+        a {
+            margin-right: .5em;
+        }
+    }
 }
 
 // notescount
