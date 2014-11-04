@@ -27,15 +27,10 @@
 // Media Queries - Large Display
 
 @media (max-width: 1320px) {
-.outer {
-    width: auto;
-}
+
 }
 
 @media (min-width: 1240px) {
-
-.index-post-wrapper {
-}
 
 
 }
@@ -164,27 +159,6 @@ body {
     margin-top: 1.5em;
 }
 
-}
-
-
-// Media Queries - Smartphone
-
-@media (max-width: 480px) {
-
-.index-post-wrapper {
-    margin-left: -5px;
-    margin-right: -5px;
-
-    .post {
-        width: 50%;
-    }
-
-    .post-inner {
-        padding: 5px;
-    }
-
-}
-
 .post {
 
     .entry-title {
@@ -211,12 +185,38 @@ body {
             }
         }
 
-        iframe {
-          width: 100% !important;
-        }
+    }
 
+    .entry-content,
+    .full-image {
+        iframe {
+            width: 100% !important;
+        }
     }
 }
+
+
+
+}
+
+// Media Queries - Smartphone
+
+@media (max-width: 480px) {
+
+.index-post-wrapper {
+    margin-left: -5px;
+    margin-right: -5px;
+
+    .post {
+        width: 50%;
+    }
+
+    .post-inner {
+        padding: 5px;
+    }
+
+}
+
 
 #footer {
     .span4 {
