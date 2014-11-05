@@ -75,12 +75,6 @@ $(document).ready(function(){
     }
   );
 
-  // notecount
-  $(".page-permalink .notecount").click(function(){
-    $(".notecontainer").slideToggle();
-    return false;
-  });
-
   // 外部サイトにはtarget blankする
   $('a').each(function() {
     var a = this;
