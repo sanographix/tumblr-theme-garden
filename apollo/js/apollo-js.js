@@ -16,12 +16,6 @@ $(document).ready(function(){
     // add syntax highlighting
     $(".entry-content pre:not(.line-pre)").addClass("prettyprint"); // ignore gist
 
-    // search form
-    $(".nav-search a").click(function(){
-      $(".search-form").toggleClass("active");
-      return false;
-    });
-
     $(window).load(function(){
 
       // photoset width100% when browser size is under 760px
