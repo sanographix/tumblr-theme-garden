@@ -151,6 +151,7 @@
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 2;
     width: 100%;
 
     h3 {
@@ -313,6 +314,7 @@
     margin-right: -10px;
 
     .post {
+        z-index: 1;
         width: 33.3333%; // 幅960pxの場合
 
         img {
