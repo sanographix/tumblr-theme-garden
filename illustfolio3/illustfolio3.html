@@ -155,6 +155,11 @@
                   </li>
                   {/block:Pages}
                 {/block:HasPages}
+                {block:AskEnabled}
+                  <li>
+                    <a href="/ask">{AskLabel}</a>
+                  </li>
+                {/block:AskEnabled}
                 {block:IfEnableTagList}
                   <li class="header-tags">
                     <a href="/">Tags</a>
