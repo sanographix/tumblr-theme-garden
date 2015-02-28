@@ -299,7 +299,10 @@
 
         img {
             vertical-align: middle;
-            height: auto;
+            display: block;
+            margin: auto;
+            line-height: 100%;
+            height: 100%;
         }
     }
 
