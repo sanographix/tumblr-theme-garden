@@ -234,6 +234,11 @@
     padding-top: 2.5em;
     padding-bottom: 4em;
 
+    a {
+        color: #fff;
+        text-decoration: underline;
+    }
+
     .section-header {
         &:after {
             background: #fff;
