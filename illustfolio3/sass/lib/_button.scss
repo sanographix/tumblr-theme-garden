@@ -32,6 +32,17 @@
     }
 }
 
+.btn-ghost {
+    background-color: transparent;
+    color: $btn-primary;
+    border: 1px solid $btn-primary;
+    &:hover {
+        background-color: $btn-primary;
+        color: #fff;
+        border: 1px solid $btn-primary;
+    }
+}
+
 .btn-large {
     padding: .8em 2em;
     font-size: 150%;
