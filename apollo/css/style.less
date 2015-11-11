@@ -63,6 +63,17 @@ h1,h2,h3,h4,h5,h6 {
     }
 }
 
+.btn-ghost {
+    color: @base !important;
+    background-color: transparent;
+    border: 1px solid @border;
+    &:hover {
+        color: @link !important;
+        border-color: @link;
+        background-color: transparent;
+    }
+}
+
 .btn-large {
     font-size: 140%;
     box-sizing: border-box;
@@ -759,6 +770,11 @@ div.likebox-container .fb_iframe_widget span{
     .copyright {
         display: block;
         float: left;
+    }
+
+    .install-button {
+        float: right;
+        font-size: 90%;
     }
 
 }
