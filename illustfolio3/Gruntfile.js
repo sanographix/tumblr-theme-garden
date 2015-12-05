@@ -64,6 +64,9 @@ module.exports = function(grunt){
             build: {
                 src: 'js/scripts.js',
                 dest: 'js/scripts.min.js'
+            },
+            options: {
+                preserveComments: 'all'
             }
         },
 

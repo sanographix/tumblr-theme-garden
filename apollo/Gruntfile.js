@@ -37,6 +37,9 @@ module.exports = function(grunt){
             build: {
                 src: 'js/apollo-js.js',
                 dest: 'js/apollo-js.min.js'
+            },
+            options: {
+                preserveComments: 'all'
             }
         },
 
