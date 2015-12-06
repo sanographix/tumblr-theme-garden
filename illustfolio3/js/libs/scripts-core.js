@@ -55,15 +55,7 @@ $(document).ready(function(){
     animate      : false,
     loading: {
         img: "//static.tumblr.com/xlsgtjb/V4Zne2alt/blank.gif",
-        msgText: "
-        <div class='spinner'>
-          <div class='rect1'></div>
-          <div class='rect2'></div>
-          <div class='rect3'></div>
-          <div class='rect4'></div>
-          <div class='rect5'></div>
-        </div>
-      ",
+        msgText: "<div class='spinner'><div class='rect1'></div><div class='rect2'></div><div class='rect3'></div><div class='rect4'></div><div class='rect5'></div></div>",
         finishedMsg: ''
       }
     }, function( newElements ) {
