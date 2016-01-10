@@ -908,6 +908,11 @@
 
     .install-button {
         margin-top: .5em;
+        .btn {
+            opacity: .8;
+            padding: .5em .8em;
+            font-size: 80%;
+        }
     }
 }
 

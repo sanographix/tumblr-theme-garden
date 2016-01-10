@@ -775,7 +775,14 @@ div.likebox-container .fb_iframe_widget span{
 
     .install-button {
         float: right;
-        font-size: 90%;
+        .btn {
+            color: #888 !important;
+            padding: .5em .8em;
+            font-size: 80%;
+            &:hover {
+                color: @hover !important;
+            }
+        }
     }
 
 }
