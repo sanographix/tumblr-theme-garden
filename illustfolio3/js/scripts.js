@@ -264,6 +264,7 @@ $(document).ready(function(){
 
   // text投稿のyoutubeもレスポンシブにする
   $(".post.text iframe[src*='youtube.com']").wrap("<div class='video-iframe'></div>");
+  $("iframe[src*='tumblr.com']").addClass("video-iframe");
 
   // fitvid
   $(".video-iframe").fitVids();
