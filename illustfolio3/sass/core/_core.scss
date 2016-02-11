@@ -683,6 +683,9 @@
     margin-bottom: 2em;
     img {
         max-width: 100%;
+        .post.photo & {
+            max-height: 1000px;
+        }
     }
 }
 
