@@ -49,19 +49,26 @@
   <meta property="og:title" content="{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title}" />
   <meta property="og:type" content="article" />
 
-   <!-- Set og-image if post type is photo or photoset -->
+  <meta name="twitter:card" content="summary_large_image">
+  {block:IndexPage}
+    <meta property="og:image" content="{HeaderImage}" />
+    <meta name="twitter:image" content="{HeaderImage}" />
+  {/block:IndexPage}
   {block:PermalinkPage}
     {block:Posts}
       {block:Photo}
         <meta property="og:image" content="{PhotoURL-HighRes}" />
+        <meta name="twitter:image" content="{PhotoURL-HighRes}" />
       {/block:Photo}
       {block:Photoset}
         {block:Photos}
         <meta property="og:image" content="{PhotoURL-HighRes}" />
+        <meta name="twitter:image" content="{PhotoURL-HighRes}" />
         {/block:Photos}
       {/block:Photoset}
     {/block:Posts}
   {/block:PermalinkPage}
+
   <meta property="og:site_name" content="{Title}" />
   {block:Description}
     <meta property="og:description" content="{MetaDescription}">
