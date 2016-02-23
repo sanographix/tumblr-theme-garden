@@ -47,7 +47,7 @@ var TumblrPosts = function(option){
 			$.extend(this.option, arg);
 			if("domain" in arg && this.config("domain")){
 				this.config({
-					url : "http://" + this.config("domain") + this.config("restPath")
+					url : "//" + this.config("domain") + this.config("restPath")
 				});
 			}
 		}
@@ -180,7 +180,7 @@ var TumblrPosts = function(option){
 
 	/**
 	 * Get the title string from post object
-	 * 
+	 *
 	 * @param Object post
 	 * @param Number count (optional)
 	 * @return String
