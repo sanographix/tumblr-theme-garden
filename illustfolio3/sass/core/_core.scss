@@ -662,6 +662,14 @@
         }
     }
 
+    // ニコニコ動画貼り付けたときにスマホで崩れるのを修正
+    & > script[src*="nicovideo"] + div {
+        max-width: 100%;
+    }
+    .page-index & > script[src*="nicovideo"] + div {
+        height: auto !important;
+    }
+
     hr {
         width: 20%;
         margin: 3em auto;
