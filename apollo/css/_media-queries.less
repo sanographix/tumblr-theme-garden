@@ -4,21 +4,21 @@
 
 --------------------------------------------------------------*/
 
-// Retina ¤Î¥Ç¥Ð¥¤¥¹È«²¿¤Ë³ö¤¹
+// Retina ï¿½Î¥Ç¥Ð¥ï¿½ï¿½ï¿½È«ï¿½ï¿½ï¿½Ë³ï¿½ï¿½ï¿½
 @media
 (-webkit-min-device-pixel-ratio: 2),
 (            min-resolution: 2dppx) {
 
 }
 
-// Retina ¤«¤Ä iPad ÒÔÉÏ¤Î¤È¤­¤Ë³ö¤¹
+// Retina ï¿½ï¿½ï¿½ï¿½ iPad ï¿½ï¿½ï¿½Ï¤Î¤È¤ï¿½ï¿½Ë³ï¿½ï¿½ï¿½
 @media
 (-webkit-min-device-pixel-ratio: 2) and (min-device-width: 768px),
 (            min-resolution: 2dppx) and (min-device-width: 768px) {
 
 }
 
-// Retina ¤«¤Ä PC ¤Î¤È¤­¤À¤±¤Ë³ö¤¹
+// Retina ï¿½ï¿½ï¿½ï¿½ PC ï¿½Î¤È¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½ï¿½
 @media
 (-webkit-min-device-pixel-ratio: 2) and (min-device-width: 1025px),
 (            min-resolution: 2dppx) and (min-device-width: 1025px) {
@@ -85,7 +85,7 @@
 #container {
     width: 93.75%;
     word-wrap: break-word;
-    overflow: hidden;
+    position: relative;
 }
 
 .mobile-nav-panel {
@@ -94,12 +94,12 @@
 
 .nav {
     height: 0;
-    width: 100%;
     overflow: hidden;
-    margin: 0;
+    margin: 0 -3.125%;
     position: absolute;
     top: 45px;
     left: 0;
+    right: 0;
     background-color: @base;
 
     &.active {
@@ -211,7 +211,7 @@
     }
 }
 
-// ¥½©`¥·¥ã¥ë¥Ü¥¿¥ó
+// ï¿½ï¿½ï¿½`ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü¥ï¿½ï¿½ï¿½
 .social-buttons-line1,
 .social-buttons-line2 {
     display: block;
