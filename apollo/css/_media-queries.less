@@ -4,21 +4,18 @@
 
 --------------------------------------------------------------*/
 
-// Retina のデバイス全部に出す
 @media
 (-webkit-min-device-pixel-ratio: 2),
 (            min-resolution: 2dppx) {
 
 }
 
-// Retina かつ iPad 以上のときに出す
 @media
 (-webkit-min-device-pixel-ratio: 2) and (min-device-width: 768px),
 (            min-resolution: 2dppx) and (min-device-width: 768px) {
 
 }
 
-// Retina かつ PC のときだけに出す
 @media
 (-webkit-min-device-pixel-ratio: 2) and (min-device-width: 1025px),
 (            min-resolution: 2dppx) and (min-device-width: 1025px) {
@@ -85,7 +82,7 @@
 #container {
     width: 93.75%;
     word-wrap: break-word;
-    overflow: hidden;
+    position: relative;
 }
 
 .mobile-nav-panel {
@@ -94,12 +91,12 @@
 
 .nav {
     height: 0;
-    width: 100%;
     overflow: hidden;
-    margin: 0;
+    margin: 0 -3.125%;
     position: absolute;
     top: 45px;
     left: 0;
+    right: 0;
     background-color: @base;
 
     &.active {
@@ -211,7 +208,6 @@
     }
 }
 
-// ソーシャルボタン
 .social-buttons-line1,
 .social-buttons-line2 {
     display: block;
