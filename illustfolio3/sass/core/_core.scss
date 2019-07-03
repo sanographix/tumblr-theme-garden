@@ -1,12 +1,5 @@
 // Core (Main Style)
 
-// icon
-.icon {
-    display: inline-block;
-    width: 32px;
-    height: 32px;
-    fill: currentColor;
-}
 
 // 見出し
 @mixin section-line {
@@ -79,7 +72,7 @@
         }
 
         .icon-reorder {
-            background-image: url('http://static.tumblr.com/xlsgtjb/rKynedane/icon-reorder-wh.png');
+            background-image: url('https://static.tumblr.com/xlsgtjb/rKynedane/icon-reorder-wh.png');
         }
 
     }
@@ -215,7 +208,7 @@
 
     .icon-reorder {
         cursor: pointer;
-        background: url('http://static.tumblr.com/xlsgtjb/J8Lnedakk/icon-reorder.png') no-repeat center center;
+        background: url('https://static.tumblr.com/xlsgtjb/J8Lnedakk/icon-reorder.png') no-repeat center center;
         background-size: 22px 18px;
         font-size: 21px;
         width: 62px;
